@@ -145,6 +145,25 @@ void updateWithKey(int key, int data){
 }
 
 
+// define a function to count the node number
+int countLength(){
+    if(head == NULL){
+        printf("List is empty!\n");
+        return 0;
+    }
+    
+    int length = 1;
+    current = head;
+    
+    while(current->next != NULL){
+        length++;
+        current = current->next;
+    }
+    
+    return length;
+}
+
+
 int main()
 {
     insertFirst(3, 10);
@@ -181,6 +200,8 @@ int main()
     
     updateWithKey(11, 16);
     printList();
+    
+    printf("Total node number: %d\n", countLength());
 
     return 0;
 }
